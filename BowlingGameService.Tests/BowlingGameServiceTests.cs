@@ -28,6 +28,9 @@ public class Tests
     [TestCase(new int[] { 10, 4, 6, 8, 0, 10, 3, 4, 9, 1, 10, 5, 2, 7, 2, 10, 3, 5 }, 141)] //played 10 frames, strike in 1st, 4th & 10th frames, spare in 2nd & 6th frames
     [TestCase(new int[] { 10, 4, 6, 8, 0, 10, 3, 4, 9, 1, 10, 5, 2, 7, 2, 10, 3, 7 }, 143)] //played 10 frames, strike in 1st, 4th & 10th frames, spare in 2nd, 6th & bonus frames
     [TestCase(new int[] { 10, 4, 6, 8, 0, 10, 3, 4, 9, 1, 10, 5, 2, 7, 2, 10, 10, 10 }, 153)] //played 10 frames, spare in 2nd, 6th & bonus frames, strike in 1st, 4th, 10th & bonus frames
+    [TestCase(new int[] { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 }, 300)] //all strike 
+    [TestCase(new int[] { 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0 }, 90)] //all 9 and 0
+    [TestCase(new int[] { 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 }, 150)] //all 5 and then spare, with bouns roll 5
     public void Given_Number_Of_Pin_Knocks_Down_Return_Score(int[] numPinKnockedDown, int expectedScore)
     {
         _bowlingScoreCalculator.CalculateScore(numPinKnockedDown).Should().Be(expectedScore);        
